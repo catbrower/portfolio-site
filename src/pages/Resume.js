@@ -9,11 +9,16 @@ import {
     IconButton,
     Stack,
     Toolbar,
-    Typography
+    Typography,
+    Fade,
+    Grow
 } from '@mui/material';
 
 import PageItem from '../components/PageItem';
 import Header from '../components/Header';
+import StandardHeader from "../components/StandardHeader";
+import StandardParagraph from "../components/StandardParagraph";
+import TitleImage from "../components/TitleImage";
 
 export default function Resume(props) {
     let group;
@@ -245,95 +250,81 @@ export default function Resume(props) {
             <Stack direction='column' className="blurBg" spacing={5} alignItems="center"  style={{'width': '100%'}}>
                 <Stack direction='column'>
                     <Stack p={4} direction='row' spacing={5}>
-                        <Typography className="consolas" variant="h4" align="left">
+                        <TitleImage src="https://i.kym-cdn.com/photos/images/facebook/000/581/251/5af.jpg">
                             Catherine Brower
-                        </Typography>
-                        <img src="https://i.kym-cdn.com/photos/images/facebook/000/581/251/5af.jpg"/>
+                        </TitleImage>
 
-                        <Typography className="consolas" align="left">
+                        <StandardParagraph>
                             I am a driven and creative software engineer looking for unique opportunities. I have two years of front-end development experience with the front-end frameworks Angular, React, and Ember. I also have experience working as a backend developer which I believe makes me well suited for a variety of positions.
-                        </Typography>
+                        </StandardParagraph>
                     </Stack>
 
                     <Stack p={4} direction="column" spacing={3}>
                         <div>
-                            <Typography className="consolas" variant="h6" align="left">
-                                Deep Intent (2020)
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            <StandardHeader variant="h6">Deep Intent (2020)</StandardHeader>
+                            <StandardParagraph indent={1}>
                                 Senior Java Developer
-                            </Typography>
+                            </StandardParagraph>
                         </div>
                         
                         <div>
-                            <Typography className="consolas" align="left" variant="h6">
-                                Gavant Software (2017 - 2019)
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            <StandardHeader variant="h6">Gavant Software (2017 - 2019)</StandardHeader>
+                            <StandardParagraph indent={1}>
                                 Front End Developer (Ember)
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            </StandardParagraph>
+
+                            <StandardParagraph indent={1}>
                                 Extensive use of GIT to maintain, create, merge, and rebase production branches
                                 Lead developed complex Javascript based web games, utilizing Ember framework
                                 Lead developer on large medical application with many subdomains including administrative portal for managing views and data
-                            </Typography>
+                            </StandardParagraph>
                         </div>
                         
                         <div>
-                            <Typography className="consolas" variant="h6" align="left">
-                                Latham Pool Products (Nov 2014 -2016)
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            <StandardHeader variant="h6">Latham Pool Products (Nov 2014 -2016)</StandardHeader>
+                            <StandardParagraph indent={1}>
                                 Java Developer
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            </StandardParagraph>
+                            <StandardParagraph indent={1}>
                                 Worked on Latham Pools’ order entry and pool design system built from Java Spring
                                 Maintained and retrofitted Viking Pools’ legacy internal systems, increasing speed and usability significantly
                                 Maintained and administered RHEL servers including troubleshooting network, Apache, and MySQL issues
-                            </Typography>
+                            </StandardParagraph>
                         </div>
                         
                         <div>
-                            <Typography className="consolas" variant="h6" align="left">
-                                Tenex Developers, Contract (2016)
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            <StandardHeader variant="h6">Tenex Developers, Contract (2016)</StandardHeader>
+                            <StandardParagraph indent={1}>
                                 Full Stack Developer
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            </StandardParagraph>
+                            <StandardParagraph indent={1}>
                                 Worked on both the angular front and java back end of a web project that can send and receive messages over a cellular network
                                 Experience coordinating and working with entirely remote team
-                            </Typography>
+                            </StandardParagraph>
                         </div>
 
                         <div>
-                            <Typography className="consolas" align="left">
-                                Skills
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            <StandardHeader variant="h6">Skills</StandardHeader>
+                            <StandardParagraph indent={1}>
                                 I am completeley incompentent
-                            </Typography>
+                            </StandardParagraph>
                         </div>
 
                         <div>
-                            <Typography className="consolas" align="left">
-                                Languages
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            <StandardHeader variant="h6">Languages</StandardHeader>
+                            <StandardParagraph indent={1}>
                                 C#, Java, Javascript / Web Languages, Python
-                            </Typography>
+                            </StandardParagraph>
                         </div>
 
                         <div>
-                            <Typography className="consolas" align="left">
-                                Education
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            <StandardHeader variant="h6">Education</StandardHeader>
+                            <StandardParagraph indent={1}>
                                 Rensselaer Polytechnic Institute (In progress)
-                            </Typography>
-                            <Typography className="consolas indent" align="left">
+                            </StandardParagraph>
+                            <StandardParagraph indent={1}>
                                 International School Bangkok (High School, 2009)
-                            </Typography>
+                            </StandardParagraph>
                         </div>
                     </Stack>
                 </Stack>

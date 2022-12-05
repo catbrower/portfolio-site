@@ -1,9 +1,6 @@
 import {
     AppBar, 
     Box,
-    Button,
-    IconButton,
-    Stack,
     Toolbar,
     Typography
 } from '@mui/material';
@@ -16,15 +13,15 @@ export default function Header() {
             <AppBar position="static">
                 <Toolbar className="toolbar">
                     <Typography variant="h6" pr={3} align="left" component="div" className="consolas">
-                        Resume
+                        <a className="link" href="resume">Resume</a>
                     </Typography>
 
                     <Typography variant="h6" align="left" component="div" className="consolas" sx={{flexGrow: 1}}>
-                        Projects
+                        <a className="link" href="projects">Projects</a>
                     </Typography>
 
                     <Typography className="consolas" align="left">
-                        <a href="https://www.github.com/catbrower">
+                        <a className="link" href="https://www.github.com/catbrower">
                             <GitHubIcon></GitHubIcon>
                         </a>
                     </Typography>

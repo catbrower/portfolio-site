@@ -58,12 +58,8 @@ body::-webkit-scrollbar {
   /* background-color: rgba(255, 255, 255, 0.5) !important; */
 }
 
-.verticalTitle {
-  position: absolute;
-  top: 91px;
-  left: 42px;
-  height: 0px;
-  transform: rotate(90deg);
+.link {
+  text-decoration: none;
 }
 
 .pageItem {
@@ -85,9 +81,19 @@ body::-webkit-scrollbar {
   position: fixed;
 }
 
-img {
-  width: 200px;
-  height: 200px;
+.titleImg {
+  width: 300px;
+  height: 400px;
+}
+
+.titleImageText {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  transform: rotate(90deg) translateY(-120px);
+  text-shadow: 0px 0px 5px #FFF;
+  background: rgba(100, 100, 100, 1);
+  /* backdrop-filter: blur(10px); */
 }
 
 .toolbar {
