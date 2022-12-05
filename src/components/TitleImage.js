@@ -1,5 +1,6 @@
 import React from "react";
 import {
+    Grow,
     Typography
 } from '@mui/material';
 
@@ -13,7 +14,10 @@ export default function TitleImage(props) {
                     {props.children}
                 </StandardHeader>
             </div>
-            <img className="titleImg" src={props.src}></img>
+
+            <Grow>
+                <img className="titleImg" src={props.src}></img>
+            </Grow>
         </React.Fragment>
     )
 }

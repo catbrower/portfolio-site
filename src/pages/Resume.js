@@ -30,6 +30,8 @@ export default function Resume(props) {
     let particlePositions;
     let linesMesh;
 
+    let fadeIn = 0;
+    let fadeInAmount = 0.0001;
     const maxParticleCount = 1000;
     let particleCount = 200;
     let particleSpeed = .1;
@@ -180,7 +182,13 @@ export default function Resume(props) {
                     particleData.numConnections ++;
                     particleDataB.numConnections ++;
 
-                    const alpha = 1.0 - dist / effectController.minDistance;
+                    if(fadeIn < 0) {
+                        fadeIn += fadeInAmount;
+                    } else {
+                        fadeIn = 1;
+                    }
+                    let alpha = 1.0 - dist / effectController.minDistance;
+                    alpha = alpha * fadeIn;
 
                     positions[ vertexpos ++ ] = particlePositions[ i * 3 ];
                     positions[ vertexpos ++ ] = particlePositions[ i * 3 + 1 ];
@@ -199,11 +207,8 @@ export default function Resume(props) {
                     colors[ colorpos ++ ] = alpha;
 
                     numConnected ++;
-
                 }
-
             }
-
         }
 
 
