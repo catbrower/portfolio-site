@@ -89,17 +89,15 @@ body::-webkit-scrollbar {
 }
 
 .titleImageText {
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  transform: rotate(90deg) translateY(-120px);
+  transform: rotate(90deg) translateY(1.5em) translateX(-1.67em);
+  width: 2em;
+  padding-bottom: 3em;
   text-shadow: 0px 0px 5px #FFF;
-  background: rgba(100, 100, 100, 1);
   /* backdrop-filter: blur(10px); */
 }
 
 .toolbar {
-  background-color: #AAA;
+  background-color: #AAA !important;
   text-shadow: 0px 0px 1px #000;
 }
 

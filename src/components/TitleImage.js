@@ -9,15 +9,11 @@ import StandardHeader from "./StandardHeader";
 export default function TitleImage(props) {
     return (
         <React.Fragment>
-            <div className="titleImageText">
-                <StandardHeader variant="h4">
-                    {props.children}
-                </StandardHeader>
-            </div>
+            <Typography align="left" variant="h2" className="consolas titleImageText">
+                {props.children}
+            </Typography>
 
-            <Grow>
-                <img className="titleImg" src={props.src}></img>
-            </Grow>
+            
         </React.Fragment>
     )
 }

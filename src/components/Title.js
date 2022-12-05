@@ -9,12 +9,13 @@ import { SphereGeometry } from 'three';
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Card, Container, Grid, Stack, Typography } from '@mui/material';
+import { Fade, Stack, Typography } from '@mui/material';
 
 import PageItem from './PageItem';
 
 function Title(props) {
     let navigate = useNavigate();
+    let isLeaving = false
     const camera_z = 400;
     const rotation_speed = 0.0002;
     let scale = 1;
@@ -125,7 +126,7 @@ function Title(props) {
 
     function animationTimer() {
         animation_progress += animationSpeed;
-        console.log(animation_progress)
+        isLeaving = true;
 
         if(animation_progress < 1) {
             window.setTimeout(animationTimer, 10);
@@ -141,9 +142,11 @@ function Title(props) {
     return (
         <PageItem >
             <Stack onClick={animationTimer} direction='row' alignItems='center' justifyContent='center' style={{'width': '100%', 'border': '2px solid red'}}>
-                <Typography className="title" variant="h1" align='center'>
-                Hire Catherine
-                </Typography>
+                <Fade in={!isLeaving} timeout={1000}>
+                    <Typography className="title" variant="h1" align='center'>
+                        Catherine
+                    </Typography>
+                </Fade>
             </Stack>
 
             <canvas onClick={animationTimer} className='stretchCanvas titleCanvas'></canvas>
