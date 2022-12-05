@@ -26,23 +26,23 @@ export default function FirstProject(props) {
     let particlePositions;
     let linesMesh;
 
-    const maxParticleCount = 500;
+    const maxParticleCount = 1000;
     let particleCount = 200;
-    let particleSpeed = 0.1;
+    let particleSpeed = .1;
     let rotationSpeedY = 0.005;
     let rotationSpeedZ = 0.01;
-    const r = 2000;
+    const r = 1000;
     const rHalf = r / 2;
 
-    let lineColor = 0x020202;
+    let lineColor = 0x111111;
     let pointColor = 0xFFFFFF;
 
     const effectController = {
         showDots: false,
         showLines: true,
-        minDistance: 500,
+        minDistance: 200,
         limitConnections: true,
-        maxConnections: 10,
+        maxConnections: 20,
         particleCount: 500
     };
 
@@ -78,7 +78,7 @@ export default function FirstProject(props) {
 
         const pMaterial = new THREE.PointsMaterial( {
             color: pointColor,
-            size: 10,
+            size: 0,
             // blending: THREE.AdditiveBlending,
             // transparent: true,
             sizeAttenuation: false
@@ -135,11 +135,11 @@ export default function FirstProject(props) {
         let colorpos = 0;
         let numConnected = 0;
 
-        for (let i = 0; i < particleCount; i ++) {
-            particlesData[i].numConnections = 0;
-        }
-            
+        for ( let i = 0; i < particleCount; i ++ )
+            particlesData[ i ].numConnections = 0;
+
         for ( let i = 0; i < particleCount; i ++ ) {
+
             // get the particle
             const particleData = particlesData[ i ];
 
@@ -176,8 +176,7 @@ export default function FirstProject(props) {
                     particleData.numConnections ++;
                     particleDataB.numConnections ++;
 
-                    const alpha = dist / effectController.minDistance;
-                    // const alpha = 1;
+                    const alpha = 1.0 - dist / effectController.minDistance;
 
                     positions[ vertexpos ++ ] = particlePositions[ i * 3 ];
                     positions[ vertexpos ++ ] = particlePositions[ i * 3 + 1 ];
@@ -196,14 +195,17 @@ export default function FirstProject(props) {
                     colors[ colorpos ++ ] = alpha;
 
                     numConnected ++;
+
                 }
+
             }
+
         }
 
 
         linesMesh.geometry.setDrawRange( 0, numConnected * 2 );
         linesMesh.geometry.attributes.position.needsUpdate = true;
-        // linesMesh.geometry.attributes.color.needsUpdate = true;
+        linesMesh.geometry.attributes.color.needsUpdate = true;
 
         pointCloud.geometry.attributes.position.needsUpdate = true;
 
@@ -302,17 +304,6 @@ export default function FirstProject(props) {
                                 <Typography className="consolas indent">
                                     Worked on both the angular front and java back end of a web project that can send and receive messages over a cellular network
                                     Experience coordinating and working with entirely remote team
-                                </Typography>
-                            </Typography>
-                        </Typography>
-
-                        <Typography className="consolas" align="left">
-                            Trilogy Education, Part Time (2019 - Current)
-                            <Typography className="consolas indent">
-                                Mentor
-                                <Typography className="consolas indent">
-                                    Teaching students web development using rails and javascript during 24 week bootcamp
-                                    Mentoring students on other skills such as git, coding techniques, troubleshooting, and advice for starting their career in technology
                                 </Typography>
                             </Typography>
                         </Typography>
