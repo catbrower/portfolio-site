@@ -5,16 +5,17 @@ import * as THREE from 'three';
 import {
     AppBar, 
     Box,
+    Button,
+    IconButton,
     Stack,
     Toolbar,
     Typography
 } from '@mui/material';
 
 import PageItem from '../components/PageItem';
-import ProjectCard from '../components/ProjectCard';
-import ProjectsAccordion from "../components/ProjectsAccordion";
+import Header from '../components/Header';
 
-export default function FirstProject(props) {
+export default function Resume(props) {
     let group;
     const particlesData = [];
     let camera, scene, renderer;
@@ -239,23 +240,14 @@ export default function FirstProject(props) {
 
     return (
         <PageItem>
-            <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static">
-                    <Toolbar className="toolbar">
-                        <Typography variant="h6" align="left" component="div" className="consolas" sx={{flexGrow: 1}}>
-                           >_ Catherine Brower
-                        </Typography>
-
-                        <Typography className="consolas" align="left">
-                            <a href="https://www.github.com/catbrower">github.com/catbrower</a>
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-            </Box>
+            <Header></Header>
 
             <Stack direction='column' className="blurBg" spacing={5} alignItems="center"  style={{'width': '100%'}}>
                 <Stack direction='column'>
                     <Stack p={4} direction='row' spacing={5}>
+                        <Typography className="consolas" variant="h4" align="left">
+                            Catherine Brower
+                        </Typography>
                         <img src="https://i.kym-cdn.com/photos/images/facebook/000/581/251/5af.jpg"/>
 
                         <Typography className="consolas" align="left">
@@ -264,75 +256,87 @@ export default function FirstProject(props) {
                     </Stack>
 
                     <Stack p={4} direction="column" spacing={3}>
-                        <Typography className="consolas" align="left">
-                            Deep Intent (2020)
-                            <Typography className="consolas indent">
+                        <div>
+                            <Typography className="consolas" variant="h6" align="left">
+                                Deep Intent (2020)
+                            </Typography>
+                            <Typography className="consolas indent" align="left">
                                 Senior Java Developer
                             </Typography>
-                        </Typography>
-
-                        <Typography className="consolas" align="left">
-                            Gavant Software (2017 - 2019)
-                            <Typography className="consolas indent">
+                        </div>
+                        
+                        <div>
+                            <Typography className="consolas" align="left" variant="h6">
+                                Gavant Software (2017 - 2019)
+                            </Typography>
+                            <Typography className="consolas indent" align="left">
                                 Front End Developer (Ember)
-                                <Typography className="consolas indent">
-                                    Extensive use of GIT to maintain, create, merge, and rebase production branches
-                                    Lead developed complex Javascript based web games, utilizing Ember framework
-                                    Lead developer on large medical application with many subdomains including administrative portal for managing views and data
-                                </Typography>
                             </Typography>
-                        </Typography>
-
-                        <Typography className="consolas" align="left">
-                            Latham Pool Products (Nov 2014 -2016)
-                            <Typography className="consolas indent">
+                            <Typography className="consolas indent" align="left">
+                                Extensive use of GIT to maintain, create, merge, and rebase production branches
+                                Lead developed complex Javascript based web games, utilizing Ember framework
+                                Lead developer on large medical application with many subdomains including administrative portal for managing views and data
+                            </Typography>
+                        </div>
+                        
+                        <div>
+                            <Typography className="consolas" variant="h6" align="left">
+                                Latham Pool Products (Nov 2014 -2016)
+                            </Typography>
+                            <Typography className="consolas indent" align="left">
                                 Java Developer
-                                <Typography className="consolas indent">
-                                    Worked on Latham Pools’ order entry and pool design system built from Java Spring
-                                    Maintained and retrofitted Viking Pools’ legacy internal systems, increasing speed and usability significantly
-                                    Maintained and administered RHEL servers including troubleshooting network, Apache, and MySQL issues
-                                </Typography>
                             </Typography>
-                        </Typography>
-
-                        <Typography className="consolas" align="left">
-                            Tenex Developers, Contract (2016)
-                            <Typography className="consolas indent">
+                            <Typography className="consolas indent" align="left">
+                                Worked on Latham Pools’ order entry and pool design system built from Java Spring
+                                Maintained and retrofitted Viking Pools’ legacy internal systems, increasing speed and usability significantly
+                                Maintained and administered RHEL servers including troubleshooting network, Apache, and MySQL issues
+                            </Typography>
+                        </div>
+                        
+                        <div>
+                            <Typography className="consolas" variant="h6" align="left">
+                                Tenex Developers, Contract (2016)
+                            </Typography>
+                            <Typography className="consolas indent" align="left">
                                 Full Stack Developer
-                                <Typography className="consolas indent">
-                                    Worked on both the angular front and java back end of a web project that can send and receive messages over a cellular network
-                                    Experience coordinating and working with entirely remote team
-                                </Typography>
                             </Typography>
-                        </Typography>
+                            <Typography className="consolas indent" align="left">
+                                Worked on both the angular front and java back end of a web project that can send and receive messages over a cellular network
+                                Experience coordinating and working with entirely remote team
+                            </Typography>
+                        </div>
 
-                        <Typography className="consolas" align="left">
-                            Skills
-                            <Typography className="consolas indent">
+                        <div>
+                            <Typography className="consolas" align="left">
+                                Skills
+                            </Typography>
+                            <Typography className="consolas indent" align="left">
                                 I am completeley incompentent
                             </Typography>
-                        </Typography>
+                        </div>
 
-                        <Typography className="consolas" align="left">
-                            Languages
-                            <Typography className="consolas indent">
+                        <div>
+                            <Typography className="consolas" align="left">
+                                Languages
+                            </Typography>
+                            <Typography className="consolas indent" align="left">
                                 C#, Java, Javascript / Web Languages, Python
                             </Typography>
-                        </Typography>
+                        </div>
 
-                        <Typography className="consolas" align="left">
-                            Education
-                            <Typography className="consolas indent">
+                        <div>
+                            <Typography className="consolas" align="left">
+                                Education
+                            </Typography>
+                            <Typography className="consolas indent" align="left">
                                 Rensselaer Polytechnic Institute (In progress)
                             </Typography>
-                            <Typography className="consolas indent">
+                            <Typography className="consolas indent" align="left">
                                 International School Bangkok (High School, 2009)
                             </Typography>
-                        </Typography>
+                        </div>
                     </Stack>
                 </Stack>
-                
-                <ProjectsAccordion />
             </Stack>
             <canvas className="stretchCanvas projectsCanvas"></canvas>
         </PageItem>

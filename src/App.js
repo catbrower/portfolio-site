@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 
 import Title from './components/Title';
 import Projects from './pages/Projects';
+import Resume from './pages/Resume';
 
 function App() {
   const [scroll, setScroll] = useState(0);
@@ -42,6 +43,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Title />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
           
         </header>

@@ -130,7 +130,7 @@ function Title(props) {
         if(animation_progress < 1) {
             window.setTimeout(animationTimer, 10);
         } else {
-            navigate("/projects");
+            navigate("/resume");
         }
     }
 
