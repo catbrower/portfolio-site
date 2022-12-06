@@ -140,10 +140,10 @@ function Title(props) {
     }
 
     return (
-        <PageItem >
-            <Stack onClick={animationTimer} direction='row' alignItems='center' justifyContent='center' style={{'width': '100%', 'border': '2px solid red'}}>
+        <PageItem hideHeaderFooter={true}>
+            <Stack onClick={animationTimer} direction='row' alignItems='center' justifyContent='center' style={{'width': '100%'}}>
                 <Fade in={!isLeaving} timeout={1000}>
-                    <Typography className="title" variant="h1" align='center'>
+                    <Typography className="title fixedCenterText" variant="h1" align='center'>
                         Catherine
                     </Typography>
                 </Fade>

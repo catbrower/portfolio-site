@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import {
     AppBar, 
     Box,
+    Container, 
     Stack,
     Toolbar,
     Typography
@@ -16,10 +17,11 @@ import ProjectsAccordion from "../components/ProjectsAccordion";
 import Header from "../components/Header";
 
 export default function FirstProject() {
+    let startTime;
     let camera, scene, renderer;
     let points;
 
-    const particles = 5000;
+    const particles = 500;
     let half_particles = particles / 2.0
     let drawCount = 1000;
 
@@ -64,8 +66,13 @@ export default function FirstProject() {
 
             color.setRGB( vx, vy, vz );
 
-            let rcolor = Math.random();
-            colors.push(rcolor, rcolor, rcolor);
+            if(Math.random() > 0.1) {
+                let rcolor = Math.random() * 0.5 + 0.5;
+                colors.push(rcolor, rcolor, rcolor, 0.1);
+            } else {
+                colors.push(Math.random() * 0.5 + 0.5, Math.random() * 0.5 + 0.5, Math.random() * 0.5 + 0.5, 0.1);
+            }
+            
         }
 
         const gl = renderer.getContext();
@@ -78,14 +85,14 @@ export default function FirstProject() {
         gl.bindBuffer( gl.ARRAY_BUFFER, pos2 );
         gl.bufferData( gl.ARRAY_BUFFER, new Float32Array( positions2 ), gl.STATIC_DRAW );
 
-        const rgb = gl.createBuffer();
-        gl.bindBuffer( gl.ARRAY_BUFFER, rgb );
+        const rgba = gl.createBuffer();
+        gl.bindBuffer( gl.ARRAY_BUFFER, rgba);
         gl.bufferData( gl.ARRAY_BUFFER, new Float32Array( colors ), gl.STATIC_DRAW );
 
         const posAttr1 = new THREE.GLBufferAttribute( pos, gl.FLOAT, 3, 4, particles );
         const posAttr2 = new THREE.GLBufferAttribute( pos2, gl.FLOAT, 3, 4, particles );
         geometry.setAttribute( 'position', posAttr1 );
-        geometry.setAttribute( 'color', new THREE.GLBufferAttribute( rgb, gl.FLOAT, 3, 4, particles ) );
+        geometry.setAttribute( 'color', new THREE.GLBufferAttribute(rgba, gl.FLOAT, 4, 4, particles));
 
         const material = new THREE.PointsMaterial({size: 15, vertexColors: true});
 
@@ -104,10 +111,10 @@ export default function FirstProject() {
     }
 
     function render() {
-        const time = Date.now() * 0.0005;
+        const time = (Date.now() - startTime) * 0.0005;
 
         // drawCount = (Math.max(5000, drawCount) + Math.floor(500 * Math.random())) % particles;
-        drawCount = Math.cos(time) * half_particles + half_particles
+        drawCount = Math.sin(time / 2) * half_particles + half_particles
         points.geometry.setDrawRange(0, drawCount);
 
         points.rotation.x = time * 0.1;
@@ -129,6 +136,7 @@ export default function FirstProject() {
     }
 
     useEffect(() => {
+        startTime = Date.now();
         init();
         animate();
 
@@ -140,10 +148,8 @@ export default function FirstProject() {
 
     return (
         <PageItem>
-            <Stack direction='column' className="blurBg" spacing={5} alignItems="center"  style={{'width': '100%'}}>
-                Nothing is here yet
-            </Stack>
-
+            <Typography className="fixedCenterText consolas">Nothing is here yet</Typography>
+            <div className="blurBackdrop"></div>
             <canvas className="stretchCanvas projectsCanvas"></canvas>
         </PageItem>
     )

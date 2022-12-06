@@ -16,11 +16,10 @@ import {
 } from '@mui/material';
 
 import PageItem from '../components/PageItem';
-import Header from '../components/Header';
 import StandardHeader from "../components/StandardHeader";
 import StandardParagraph from "../components/StandardParagraph";
 import TitleImage from "../components/TitleImage";
-import Footer from "../components/Footer";
+import ResumeParagraph from "../components/ResumeParagraph";
 
 export default function Resume(props) {
     let group;
@@ -247,96 +246,105 @@ export default function Resume(props) {
         init();
         animate();
     });
-    
-    let padding = 10;
 
     return (
         <PageItem>
-            <Stack direction='column' className="blurBg" spacing={5} alignItems="center"  style={{'width': '100%'}}>
-                <Stack direction='column'>
-                    <Container sm={6}>
-                        <Stack p={4} direction='row' spacing={5}>
-                            <TitleImage src="https://i.kym-cdn.com/photos/images/facebook/000/581/251/5af.jpg">
-                                Catherine Brower
-                            </TitleImage>
+            <Stack width={'100vw'} alignItems="center" direction="column" spacing={3}>
+                <Container>
+                    <ResumeParagraph title="" subTitle="" transitionAmount={1}>
+                        <StandardHeader variant="h4">
+                            Catherine
+                        </StandardHeader>
+                        <StandardHeader variant="h6">Brower</StandardHeader>
+                        
+                        <StandardParagraph>
+                            I am a driven and creative software engineer looking for unique opportunities. I have two years of front-end development experience with the front-end frameworks Angular, React, and Ember. I also have experience working as a backend developer which I believe makes me well suited for a variety of positions.
+                        </StandardParagraph>
+                    </ResumeParagraph>
+                </Container>
 
-                            <StandardParagraph>
-                                I am a driven and creative software engineer looking for unique opportunities. I have two years of front-end development experience with the front-end frameworks Angular, React, and Ember. I also have experience working as a backend developer which I believe makes me well suited for a variety of positions.
-                            </StandardParagraph>
+                <Container>
+                    <ResumeParagraph title="" subTitle="" transitionAmount={1}>
+                        <StandardHeader variant="h4">DeepIntent</StandardHeader>
+                        <StandardHeader variant="h6">Senior Java Developer</StandardHeader>
+                        <StandardParagraph>
+                            (2020)
+                            Did some codin n stuff
+                        </StandardParagraph>
+                    </ResumeParagraph>
+                </Container>
+                
+                <Container sm={6}>
+                    <ResumeParagraph title="" subTitle="">
+                        <StandardHeader variant="h4">Gavant Software</StandardHeader>
+                        <StandardHeader variant="h6">Front End Developer</StandardHeader>
+                        <StandardParagraph>
+                            2017 - 2019
+                            Extensive use of GIT to maintain, create, merge, and rebase production branches
+                            Lead developed complex Javascript based web games, utilizing Ember framework
+                            Lead developer on large medical application with many subdomains including administrative portal for managing views and data
+                        </StandardParagraph>
+                    </ResumeParagraph>
+                </Container>
+                
+                <Container sm={6}>
+                    <ResumeParagraph title="" subTitle="">
+                        <StandardHeader variant="h4">Latham Pools</StandardHeader>
+                        <StandardHeader variant="h6">Java Developer</StandardHeader>
+                        <StandardParagraph>
+                            (Nov 2014 -2016)
+                            Worked on Latham Pools’ order entry and pool design system built from Java Spring
+                            Maintained and retrofitted Viking Pools’ legacy internal systems, increasing speed and usability significantly
+                            Maintained and administered RHEL servers including troubleshooting network, Apache, and MySQL issues
+                        </StandardParagraph>
+                    </ResumeParagraph>
+                </Container>
+                
+                <Container sm={6}>
+                    <ResumeParagraph title="" subTitle="">
+                        <StandardHeader variant="h4">Tenex Developers</StandardHeader>
+                        <StandardHeader variant="h6">Full Stack Developer</StandardHeader>
+                        <StandardParagraph>
+                            (2016)
+                            Worked on both the angular front and java back end of a web project that can send and receive messages over a cellular network
+                            Experience coordinating and working with entirely remote team
+                        </StandardParagraph>
+                    </ResumeParagraph>
+                </Container>
+
+                <Container sm={6}>
+                    <ResumeParagraph title="" subTitle="" >
+                        <Stack spacing={5}>
+                            <Container style={{padding: '0px'}}>
+                                <StandardHeader variant="h6">Skills</StandardHeader>
+                                <StandardParagraph>
+                                    I am completeley incompentent
+                                </StandardParagraph>
+                            </Container>
+
+                            <Container style={{padding: '0px'}}>
+                                <StandardHeader variant="h6">Languages</StandardHeader>
+                                <StandardParagraph>
+                                    C#, Java, Javascript / Web Languages, Python
+                                </StandardParagraph>
+                            </Container>
+
+                            <Container style={{padding: '0px'}}>
+                                <StandardHeader variant="h6">Education</StandardHeader>
+                                <StandardParagraph>
+                                    Rensselaer Polytechnic Institute (In progress)
+                                </StandardParagraph>
+                                <StandardParagraph>
+                                    International School Bangkok (High School, 2009)
+                                </StandardParagraph>
+                            </Container>
                         </Stack>
-                    </Container>
-
-                    <Stack p={4} direction="column" spacing={3}>
-                        <Container sm={6}>
-                            <StandardHeader variant="h6">Deep Intent (2020)</StandardHeader>
-                            <StandardParagraph indent={1}>
-                                Senior Java Developer
-                            </StandardParagraph>
-                        </Container>
-                        
-                        <Container sm={6}>
-                            <StandardHeader variant="h6">Gavant Software (2017 - 2019)</StandardHeader>
-                            <StandardParagraph indent={1}>
-                                Front End Developer (Ember)
-                            </StandardParagraph>
-
-                            <StandardParagraph indent={1}>
-                                Extensive use of GIT to maintain, create, merge, and rebase production branches
-                                Lead developed complex Javascript based web games, utilizing Ember framework
-                                Lead developer on large medical application with many subdomains including administrative portal for managing views and data
-                            </StandardParagraph>
-                        </Container>
-                        
-                        <Container sm={6}>
-                            <StandardHeader variant="h6">Latham Pool Products (Nov 2014 -2016)</StandardHeader>
-                            <StandardParagraph indent={1}>
-                                Java Developer
-                            </StandardParagraph>
-                            <StandardParagraph indent={1}>
-                                Worked on Latham Pools’ order entry and pool design system built from Java Spring
-                                Maintained and retrofitted Viking Pools’ legacy internal systems, increasing speed and usability significantly
-                                Maintained and administered RHEL servers including troubleshooting network, Apache, and MySQL issues
-                            </StandardParagraph>
-                        </Container>
-                        
-                        <Container sm={6}>
-                            <StandardHeader variant="h6">Tenex Developers, Contract (2016)</StandardHeader>
-                            <StandardParagraph indent={1}>
-                                Full Stack Developer
-                            </StandardParagraph>
-                            <StandardParagraph indent={1}>
-                                Worked on both the angular front and java back end of a web project that can send and receive messages over a cellular network
-                                Experience coordinating and working with entirely remote team
-                            </StandardParagraph>
-                        </Container>
-
-                        <Container sm={6}>
-                            <StandardHeader variant="h6">Skills</StandardHeader>
-                            <StandardParagraph indent={1}>
-                                I am completeley incompentent
-                            </StandardParagraph>
-                        </Container>
-
-                        <Container sm={6}>
-                            <StandardHeader variant="h6">Languages</StandardHeader>
-                            <StandardParagraph indent={1}>
-                                C#, Java, Javascript / Web Languages, Python
-                            </StandardParagraph>
-                        </Container>
-
-                        <Container sm={6}>
-                            <StandardHeader variant="h6">Education</StandardHeader>
-                            <StandardParagraph indent={1}>
-                                Rensselaer Polytechnic Institute (In progress)
-                            </StandardParagraph>
-                            <StandardParagraph indent={1}>
-                                International School Bangkok (High School, 2009)
-                            </StandardParagraph>
-                        </Container>
-                    </Stack>
-                </Stack>
+                    </ResumeParagraph>
+                    
+                </Container>
             </Stack>
             
+            <div className="blurBackdrop"></div>
             <canvas className="stretchCanvas resumeCanvas"></canvas>
         </PageItem>
     )

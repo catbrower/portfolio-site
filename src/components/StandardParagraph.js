@@ -5,7 +5,7 @@ import {
 
 export default function StandardParagraph(props) {
     return (
-        <Fade in={true} timeout={1000} pl={5 * props.indent}>
+        <Fade in={true} timeout={1000} pl={props.pl} pr={props.pr} pt={props.pt}>
             <Typography align="left" className="consolas">
                 {props.children}
             </Typography>
