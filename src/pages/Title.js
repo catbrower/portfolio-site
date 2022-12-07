@@ -6,16 +6,45 @@ import { RGBShiftShader } from 'three/addons/shaders/RGBShiftShader.js';
 import { DotScreenShader } from 'three/addons/shaders/DotScreenShader';
 import { SphereGeometry } from 'three';
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Fade, Stack, Typography } from '@mui/material';
 
 import PageItem from '../components/PageItem';
 
-function Title(props) {
+function TitlePageContent(props) {
+    const [isLeaving, setIsLeaving] = useState(false);
+    const [fontSize, setFontSize] = useState(parseInt(window.innerWidth / 10));
+    function leavePage() {
+        setIsLeaving(true);
+        props.leavePage();
+    }
+
+    function handleResisze() {
+        setFontSize(parseInt(window.innerWidth / 10));
+    }
+
+
+    window.addEventListener('resize', handleResisze);
+
+    return (
+        <React.Fragment>
+            <Stack direction='row' alignItems='center' justifyContent='center' style={{'width': '100%'}}>
+                <Fade in={!isLeaving} timeout={1000}>
+                    <Typography style={{'fontSize': `${fontSize}px`}} className="title fixedCenterText" align='center'>
+                        Catherine
+                    </Typography>
+                </Fade>
+            </Stack>
+            <div className="titleOverlay" onClick={leavePage}></div>
+        </React.Fragment>
+    )
+}
+
+function Title() {
     let navigate = useNavigate();
-    let isLeaving = false
+    let isLeaving = false;
     const camera_z = 400;
     const rotation_speed = 0.0002;
     let scale = 1;
@@ -103,29 +132,23 @@ function Title(props) {
 
     useEffect(() => {
         window.addEventListener('resize', handleResisze);
-        // window.addEventListener('scroll', handleScroll);
         
         init();
         animate();
     });
 
-    function handleScroll(event) {
-        // scroll = window.scrollY;
-        // scale = 1 - scroll / window.innerHeight;
-        // scale = scale > 0 ? scale : 0;
-    }
-
     function handleResisze(event) {
         width = window.innerWidth;
         height = window.innerHeight;
         renderer.setSize(width, height);
-        composer.setSize(width, height);
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
+        // composer.setSize(width, height);
+        // camera.aspect = width / height;
+        // camera.updateProjectionMatrix();
     }
 
     function animationTimer() {
         animation_progress += animationSpeed;
+        // setIsLeaving(true);
         isLeaving = true;
 
         if(animation_progress < 1) {
@@ -135,21 +158,12 @@ function Title(props) {
         }
     }
 
-    const getTitleOpacity = function() {
-        return 1;
-    }
+
 
     return (
         <PageItem hideHeaderFooter={true}>
-            <Stack direction='row' alignItems='center' justifyContent='center' style={{'width': '100%'}}>
-                <Fade in={!isLeaving} timeout={1000}>
-                    <Typography className="title fixedCenterText" variant="h1" align='center'>
-                        Catherine
-                    </Typography>
-                </Fade>
-            </Stack>
-
-            <div className="titleOverlay" onClick={animationTimer}></div>
+            <TitlePageContent leavePage={animationTimer} />
+            
             <canvas onClick={animationTimer} className='stretchCanvas titleCanvas'></canvas>
         </PageItem>
     )
