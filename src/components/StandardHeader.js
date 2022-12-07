@@ -6,7 +6,7 @@ import {
 export default function StandardHeader(props) {
     return (
         <Grow in={true}  timeout={1000}>
-            <Typography align="left" variant={props.variant} className="consolas">
+            <Typography align="left" variant={props.variant} className="consolas standardHeader">
                 {props.children}
             </Typography>
         </Grow>

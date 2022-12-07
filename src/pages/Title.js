@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Fade, Stack, Typography } from '@mui/material';
 
-import PageItem from './PageItem';
+import PageItem from '../components/PageItem';
 
 function Title(props) {
     let navigate = useNavigate();
@@ -141,7 +141,7 @@ function Title(props) {
 
     return (
         <PageItem hideHeaderFooter={true}>
-            <Stack onClick={animationTimer} direction='row' alignItems='center' justifyContent='center' style={{'width': '100%'}}>
+            <Stack direction='row' alignItems='center' justifyContent='center' style={{'width': '100%'}}>
                 <Fade in={!isLeaving} timeout={1000}>
                     <Typography className="title fixedCenterText" variant="h1" align='center'>
                         Catherine
@@ -149,6 +149,7 @@ function Title(props) {
                 </Fade>
             </Stack>
 
+            <div className="titleOverlay" onClick={animationTimer}></div>
             <canvas onClick={animationTimer} className='stretchCanvas titleCanvas'></canvas>
         </PageItem>
     )

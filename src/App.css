@@ -21,6 +21,14 @@ body::-webkit-scrollbar {
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
 }
 
+.titleOverlay {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
 .title {
   color: rgba(255, 255, 255, 0);
   text-shadow: 0px 0px 2px #fff, 0px 0px 10px #000;
@@ -32,7 +40,7 @@ body::-webkit-scrollbar {
 
 .subTitle {
   color: rgba(255, 255, 255, 0);
-  text-shadow: 0px 0px 2px #CCC, 0px 0px 1px #000;
+  /* text-shadow: 0px 0px 2px #CCC, 0px 0px 1px #000; */
   font-weight: bold;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
   backdrop-filter: blur(2px);
@@ -70,7 +78,6 @@ body::-webkit-scrollbar {
 
 .link {
   color: black;
-  /* text-decoration: none; */
 }
 
 .pageItem {
@@ -98,7 +105,7 @@ body::-webkit-scrollbar {
   transform: rotate(90deg) translateY(1.5em) translateX(-1.67em);
   width: 2em;
   padding-bottom: 3em;
-  text-shadow: 0px 0px 5px #FFF;
+  /* text-shadow: 0px 0px 5px #FFF; */
   white-space: nowrap;
   /* backdrop-filter: blur(10px); */
 }
@@ -117,7 +124,7 @@ body::-webkit-scrollbar {
   transform: rotate(90deg) translateY(-25%);
   width: 2em;
   padding-bottom: 3em;
-  text-shadow: 0px 0px 5px #FFF;
+  /* text-shadow: 0px 0px 5px #FFF; */
   white-space: nowrap;
 }
 
@@ -130,7 +137,7 @@ body::-webkit-scrollbar {
   transform: rotate(90deg) translateY(-50%) translateX(-200%);
   width: 2em;
   padding-bottom: 3em;
-  text-shadow: 0px 0px 5px #FFF;
+  /* text-shadow: 0px 0px 5px #FFF; */
   white-space: nowrap;
 }
 
@@ -153,4 +160,17 @@ body::-webkit-scrollbar {
   width: 100vw;
   white-space: nowrap;
   transform: translateY(50vh) translateY(-50%);
+}
+
+.standardHeader {
+  transform-origin: top left;
+}
+
+.standardParagraph {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.bulletPoint {
+  width: 25px;
+  height: 25px;
 }

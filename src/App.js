@@ -9,7 +9,7 @@ import {
 import { Card, Container, Grid, Stack, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 
-import Title from './components/Title';
+import Title from './pages/Title';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
 

@@ -18,8 +18,8 @@ import {
 import PageItem from '../components/PageItem';
 import StandardHeader from "../components/StandardHeader";
 import StandardParagraph from "../components/StandardParagraph";
-import TitleImage from "../components/TitleImage";
 import ResumeParagraph from "../components/ResumeParagraph";
+import Bullet from "../components/Bullet";
 
 export default function Resume(props) {
     let group;
@@ -32,16 +32,16 @@ export default function Resume(props) {
     let linesMesh;
 
     let fadeIn = 0;
-    let fadeInAmount = 0.0001;
+    let start = -1;
     const maxParticleCount = 1000;
-    let particleCount = 200;
+    let particleCount = 100;
     let particleSpeed = .1;
     let rotationSpeedY = 0.005;
     let rotationSpeedZ = 0.01;
     const r = 1000;
     const rHalf = r / 2;
 
-    let lineColor = 0x111111;
+    let lineColor = 0x050505;
     let pointColor = 0xFFFFFF;
 
     const effectController = {
@@ -168,9 +168,8 @@ export default function Resume(props) {
 
             // Check collision
             for ( let j = i + 1; j < particleCount; j ++ ) {
-
                 const particleDataB = particlesData[ j ];
-                if ( effectController.limitConnections && particleDataB.numConnections >= effectController.maxConnections )
+                if (effectController.limitConnections && particleDataB.numConnections >= effectController.maxConnections )
                     continue;
 
                 const dx = particlePositions[ i * 3 ] - particlePositions[ j * 3 ];
@@ -178,18 +177,11 @@ export default function Resume(props) {
                 const dz = particlePositions[ i * 3 + 2 ] - particlePositions[ j * 3 + 2 ];
                 const dist = Math.sqrt( dx * dx + dy * dy + dz * dz );
 
-                if ( dist < effectController.minDistance ) {
-
+                if (dist < effectController.minDistance) {
                     particleData.numConnections ++;
                     particleDataB.numConnections ++;
 
-                    if(fadeIn < 0) {
-                        fadeIn += fadeInAmount;
-                    } else {
-                        fadeIn = 1;
-                    }
-                    let alpha = 1.0 - dist / effectController.minDistance;
-                    alpha = alpha * fadeIn;
+                    let alpha = fadeIn;
 
                     positions[ vertexpos ++ ] = particlePositions[ i * 3 ];
                     positions[ vertexpos ++ ] = particlePositions[ i * 3 + 1 ];
@@ -225,7 +217,16 @@ export default function Resume(props) {
     }
 
     function render() {
-        const time = Date.now() * 0.001;
+        if(start === -1) {
+            start = Date.now();
+        }
+        let time = (Date.now() - start) * 0.001;
+
+        if(fadeIn < 1) {
+            fadeIn = time * 0.5;
+        } else {
+            fadeIn = 1;
+        }
 
         group.rotation.y = time * rotationSpeedY;
         group.rotation.z = time * rotationSpeedZ;
@@ -252,10 +253,8 @@ export default function Resume(props) {
             <Stack width={'100vw'} alignItems="center" direction="column" spacing={3}>
                 <Container>
                     <ResumeParagraph title="" subTitle="" transitionAmount={1}>
-                        <StandardHeader variant="h4">
-                            Catherine
-                        </StandardHeader>
-                        <StandardHeader variant="h6">Brower</StandardHeader>
+                        <StandardHeader variant="h4">Catherine</StandardHeader>
+                        <StandardHeader variant="h5">Brower</StandardHeader>
                         
                         <StandardParagraph>
                             I am a driven and creative software engineer looking for unique opportunities. I have two years of front-end development experience with the front-end frameworks Angular, React, and Ember. I also have experience working as a backend developer which I believe makes me well suited for a variety of positions.
@@ -266,54 +265,58 @@ export default function Resume(props) {
                 <Container>
                     <ResumeParagraph title="" subTitle="" transitionAmount={1}>
                         <StandardHeader variant="h4">DeepIntent</StandardHeader>
-                        <StandardHeader variant="h6">Senior Java Developer</StandardHeader>
-                        <StandardParagraph>
-                            (2020)
+                        <StandardHeader variant="h6">Senior Java Developer (2020)</StandardHeader>
+                        <Bullet>
                             Did some codin n stuff
-                        </StandardParagraph>
+                        </Bullet>
                     </ResumeParagraph>
                 </Container>
                 
-                <Container sm={6}>
+                <Container>
                     <ResumeParagraph title="" subTitle="">
                         <StandardHeader variant="h4">Gavant Software</StandardHeader>
-                        <StandardHeader variant="h6">Front End Developer</StandardHeader>
-                        <StandardParagraph>
-                            2017 - 2019
+                        <StandardHeader variant="h6">Front End Developer (2017 - 2019)</StandardHeader>
+                        <Bullet>
                             Extensive use of GIT to maintain, create, merge, and rebase production branches
+                        </Bullet>
+                        <Bullet>
                             Lead developed complex Javascript based web games, utilizing Ember framework
+                        </Bullet>
+                        <Bullet>
                             Lead developer on large medical application with many subdomains including administrative portal for managing views and data
-                        </StandardParagraph>
+                        </Bullet>
                     </ResumeParagraph>
                 </Container>
                 
-                <Container sm={6}>
+                <Container>
                     <ResumeParagraph title="" subTitle="">
                         <StandardHeader variant="h4">Latham Pools</StandardHeader>
-                        <StandardHeader variant="h6">Java Developer</StandardHeader>
-                        <StandardParagraph>
-                            (Nov 2014 -2016)
+                        <StandardHeader variant="h6">Java Developer (Nov 2014 -2016)</StandardHeader>
+                        <Bullet>
                             Worked on Latham Pools’ order entry and pool design system built from Java Spring
+                        </Bullet>
+                        <Bullet>
                             Maintained and retrofitted Viking Pools’ legacy internal systems, increasing speed and usability significantly
+                        </Bullet>
+                        <Bullet>
                             Maintained and administered RHEL servers including troubleshooting network, Apache, and MySQL issues
-                        </StandardParagraph>
+                        </Bullet>
                     </ResumeParagraph>
                 </Container>
                 
-                <Container sm={6}>
+                <Container>
                     <ResumeParagraph title="" subTitle="">
                         <StandardHeader variant="h4">Tenex Developers</StandardHeader>
-                        <StandardHeader variant="h6">Full Stack Developer</StandardHeader>
-                        <StandardParagraph>
-                            (2016)
+                        <StandardHeader variant="h6">Full Stack Developer (2016)</StandardHeader>
+                        <Bullet>
                             Worked on both the angular front and java back end of a web project that can send and receive messages over a cellular network
                             Experience coordinating and working with entirely remote team
-                        </StandardParagraph>
+                        </Bullet>
                     </ResumeParagraph>
                 </Container>
 
-                <Container sm={6}>
-                    <ResumeParagraph title="" subTitle="" >
+                <Container>
+                    <ResumeParagraph title="" subTitle="">
                         <Stack spacing={5}>
                             <Container style={{padding: '0px'}}>
                                 <StandardHeader variant="h6">Skills</StandardHeader>
@@ -340,7 +343,6 @@ export default function Resume(props) {
                             </Container>
                         </Stack>
                     </ResumeParagraph>
-                    
                 </Container>
             </Stack>
             
