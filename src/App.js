@@ -2,40 +2,17 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 
-import { Card, Container, Grid, Stack, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 import Title from './pages/Title';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
+import Complexity from './pages/projects/Complexity';
 
 function App() {
-  const [scroll, setScroll] = useState(0);
-  const [aniStage, setAniStage] = useState(0);
-
-  useEffect(() => {
-    // window.addEventListener('scroll', handleScroll);
-  })
-
-  const handleScroll = function(event) {
-    event.preventDefault();
-    setScroll(window.scrollY);
-  }
-
-  let wh = window.innerHeight;
-  let scroll_heights = [wh, 5 * wh];
-  let scroll_mins = [0.0, 0.0];
-
-  let scroll_sum = 0;
-  for(let i = 0; i < scroll_heights.length; i++) {
-    scroll_mins[i] = scroll_sum;
-    scroll_sum += scroll_heights[i];
-  }
-
   return (
     <Router>
       <div className="App">
@@ -44,6 +21,7 @@ function App() {
             <Route path="/" element={<Title />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/complexity" element={<Complexity />} />
           </Routes>
           
         </header>

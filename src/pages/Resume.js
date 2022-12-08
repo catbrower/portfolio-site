@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import * as THREE from 'three';
 
 import {
-    AppBar, 
-    Box,
-    Button,
     Container,
-    IconButton,
-    Stack,
-    Toolbar,
-    Typography,
-    Fade,
-    Grow
+    Stack
 } from '@mui/material';
 
 import PageItem from '../components/PageItem';

@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import * as THREE from 'three';
 
 import {
-    AppBar, 
-    Box,
-    Container, 
-    Stack,
-    Toolbar,
     Typography
 } from '@mui/material';
 
 import PageItem from '../components/PageItem';
-import ProjectCard from '../components/ProjectCard';
-import ProjectsAccordion from "../components/ProjectsAccordion";
-import Header from "../components/Header";
 
 export default function FirstProject() {
     let startTime;
