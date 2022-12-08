@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import * as THREE from 'three';
 
 import {
-    AppBar, 
-    Box,
-    Button,
     Container,
-    IconButton,
-    Stack,
-    Toolbar,
-    Typography,
-    Fade,
-    Grow
+    Stack
 } from '@mui/material';
 
 import PageItem from '../components/PageItem';
@@ -21,7 +13,7 @@ import StandardParagraph from "../components/StandardParagraph";
 import ResumeParagraph from "../components/ResumeParagraph";
 import Bullet from "../components/Bullet";
 
-export default function Resume(props) {
+export default function Resume() {
     let group;
     const particlesData = [];
     let camera, scene, renderer;
@@ -52,9 +44,6 @@ export default function Resume(props) {
         maxConnections: 20,
         particleCount: 500
     };
-
-    init();
-    animate();
 
     function init() {
         let canvas = document.getElementsByClassName('resumeCanvas')[0];
@@ -234,15 +223,11 @@ export default function Resume(props) {
     }
 
     function handleResize() {
-        // camera.aspect = window.innerWidth / window.innerHeight;
-        // camera.updateProjectionMatrix();
-
         renderer.setSize( window.innerWidth, window.innerHeight );
     }
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
-        // window.addEventListener('scroll', handleScroll);
         
         init();
         animate();

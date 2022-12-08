@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import * as THREE from 'three';
 
 import {
-    AppBar, 
-    Box,
-    Container, 
-    Stack,
-    Toolbar,
     Typography
 } from '@mui/material';
 
 import PageItem from '../components/PageItem';
-import ProjectCard from '../components/ProjectCard';
-import ProjectsAccordion from "../components/ProjectsAccordion";
-import Header from "../components/Header";
 
 export default function FirstProject() {
     let startTime;
@@ -90,7 +82,7 @@ export default function FirstProject() {
         gl.bufferData( gl.ARRAY_BUFFER, new Float32Array( colors ), gl.STATIC_DRAW );
 
         const posAttr1 = new THREE.GLBufferAttribute( pos, gl.FLOAT, 3, 4, particles );
-        const posAttr2 = new THREE.GLBufferAttribute( pos2, gl.FLOAT, 3, 4, particles );
+        // const posAttr2 = new THREE.GLBufferAttribute( pos2, gl.FLOAT, 3, 4, particles );
         geometry.setAttribute( 'position', posAttr1 );
         geometry.setAttribute( 'color', new THREE.GLBufferAttribute(rgba, gl.FLOAT, 4, 4, particles));
 
@@ -112,8 +104,7 @@ export default function FirstProject() {
 
     function render() {
         const time = (Date.now() - startTime) * 0.0005;
-
-        // drawCount = (Math.max(5000, drawCount) + Math.floor(500 * Math.random())) % particles;
+        
         drawCount = Math.sin(time / 2) * half_particles + half_particles
         points.geometry.setDrawRange(0, drawCount);
 
@@ -125,13 +116,6 @@ export default function FirstProject() {
     }
 
     function handleResize() {
-        // camera.aspect = window.innerWidth / window.innerHeight;
-        // camera.updateProjectionMatrix();
-
-        // renderer.setSize(window.innerWidth, window.innerHeight);
-        // camera.aspect = window.innerWidth / window.innerHeight;
-        // camera.updateProjectionMatrix();
-
         renderer.setSize( window.innerWidth, window.innerHeight );
     }
 
@@ -141,10 +125,7 @@ export default function FirstProject() {
         animate();
 
         window.addEventListener('resize', handleResize);
-        // window.addEventListener('scroll', handleScroll);
     });
-    
-    let padding = 10;
 
     return (
         <PageItem>

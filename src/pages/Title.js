@@ -25,7 +25,6 @@ function TitlePageContent(props) {
         setFontSize(parseInt(window.innerWidth / 10));
     }
 
-
     window.addEventListener('resize', handleResisze);
 
     return (
@@ -141,14 +140,10 @@ function Title() {
         width = window.innerWidth;
         height = window.innerHeight;
         renderer.setSize(width, height);
-        // composer.setSize(width, height);
-        // camera.aspect = width / height;
-        // camera.updateProjectionMatrix();
     }
 
     function animationTimer() {
         animation_progress += animationSpeed;
-        // setIsLeaving(true);
         isLeaving = true;
 
         if(animation_progress < 1) {
@@ -158,12 +153,9 @@ function Title() {
         }
     }
 
-
-
     return (
         <PageItem hideHeaderFooter={true}>
             <TitlePageContent leavePage={animationTimer} />
-            
             <canvas onClick={animationTimer} className='stretchCanvas titleCanvas'></canvas>
         </PageItem>
     )
