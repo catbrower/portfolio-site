@@ -252,7 +252,7 @@ export default function Resume() {
                 <Container>
                     <ResumeParagraph title="" subTitle="" transitionAmount={1}>
                         <StandardHeader variant="h4">DeepIntent</StandardHeader>
-                        <StandardHeader variant="h6">Senior Java Developer (2020)</StandardHeader>
+                        <StandardHeader variant="h6">Remote Senior Java Developer (2020)</StandardHeader>
                         <Bullet>
                             Developed latency sensitive marketing software in Java Spring
                         </Bullet>
@@ -300,7 +300,7 @@ export default function Resume() {
                 <Container>
                     <ResumeParagraph title="" subTitle="">
                         <StandardHeader variant="h4">Tenex Developers</StandardHeader>
-                        <StandardHeader variant="h6">Full Stack Developer (2016)</StandardHeader>
+                        <StandardHeader variant="h6">Remote Full Stack Developer (2016)</StandardHeader>
                         <Bullet>
                             Worked on both the angular front and java back end of a web project that can send and receive messages over a cellular network
                             Experience coordinating and working with entirely remote team
@@ -323,7 +323,7 @@ export default function Resume() {
                                     Python: Numpy, Pandas, Scipy, Ray, Matplotlib, Jupyter, Keras
                                 </StandardParagraph>
                                 <StandardParagraph>
-                                    Web: React, Material UI, Node
+                                    Web: React, Material UI, Three.js, Node
                                 </StandardParagraph>
                             </Container>
 
