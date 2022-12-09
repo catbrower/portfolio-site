@@ -240,9 +240,11 @@ export default function Resume() {
                     <ResumeParagraph title="" subTitle="" transitionAmount={1}>
                         <StandardHeader variant="h4">Catherine</StandardHeader>
                         <StandardHeader variant="h5">Brower</StandardHeader>
-                        
                         <StandardParagraph>
-                            I am a driven and creative software engineer looking for unique opportunities. I have two years of front-end development experience with the front-end frameworks Angular, React, and Ember. I also have experience working as a backend developer which I believe makes me well suited for a variety of positions.
+                            I am a driven and creative software engineer looking for unique opportunities.
+                            I have three years experience creating enterprise software with Java.
+                            In my most recent Java role I worked on a cloud application and I am very interested in similar positions.
+                            Additionally, I have two years of front-end development experience, being most comfortable with React.
                         </StandardParagraph>
                     </ResumeParagraph>
                 </Container>
@@ -252,7 +254,13 @@ export default function Resume() {
                         <StandardHeader variant="h4">DeepIntent</StandardHeader>
                         <StandardHeader variant="h6">Senior Java Developer (2020)</StandardHeader>
                         <Bullet>
-                            Did some codin n stuff
+                            Developed latency sensitive marketing software in Java Spring
+                        </Bullet>
+                        <Bullet>
+                            Improved application speed allowing for fast ad bids
+                        </Bullet>
+                        <Bullet>
+                            Deployed and managed production server in kubernetes
                         </Bullet>
                     </ResumeParagraph>
                 </Container>
@@ -306,14 +314,23 @@ export default function Resume() {
                             <Container style={{padding: '0px'}}>
                                 <StandardHeader variant="h6">Skills</StandardHeader>
                                 <StandardParagraph>
-                                    I am completeley incompentent
+                                    General: Git, Docker, K8S, Multithreading, Basic DevOps, Basic Unix
+                                </StandardParagraph>
+                                <StandardParagraph>
+                                    Java: Spring Boot, JPA, Maven
+                                </StandardParagraph>
+                                <StandardParagraph>
+                                    Python: Numpy, Pandas, Scipy, Ray, Matplotlib, Jupyter, Keras
+                                </StandardParagraph>
+                                <StandardParagraph>
+                                    Web: React, Material UI, Node
                                 </StandardParagraph>
                             </Container>
 
                             <Container style={{padding: '0px'}}>
-                                <StandardHeader variant="h6">Languages</StandardHeader>
+                                <StandardHeader variant="h6">Limited Exposure</StandardHeader>
                                 <StandardParagraph>
-                                    C#, Java, Javascript / Web Languages, Python
+                                    C#, Wireguard, Grafana, Postgres, Mongo DB
                                 </StandardParagraph>
                             </Container>
 
