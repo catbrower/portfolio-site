@@ -128,10 +128,10 @@ export default function FirstProject() {
     });
 
     return (
-        <PageItem>
+        <React.Fragment>
             <Typography className="fixedCenterText consolas">Nothing is here yet</Typography>
             <div className="blurBackdrop"></div>
             <canvas className="stretchCanvas projectsCanvas"></canvas>
-        </PageItem>
+        </React.Fragment>
     )
 }

@@ -234,7 +234,7 @@ export default function Resume() {
     });
 
     return (
-        <PageItem>
+        <React.Fragment>
             <Stack width={'100vw'} alignItems="center" direction="column" spacing={3}>
                 <Container>
                     <ResumeParagraph title="" subTitle="" transitionAmount={1}>
@@ -252,7 +252,7 @@ export default function Resume() {
                 <Container>
                     <ResumeParagraph title="" subTitle="" transitionAmount={1}>
                         <StandardHeader variant="h4">DeepIntent</StandardHeader>
-                        <StandardHeader variant="h6">Remote Senior Java Developer (2020)</StandardHeader>
+                        <StandardHeader variant="h6">Remote Senior Java Developer (2020 - 2021)</StandardHeader>
                         <Bullet>
                             Developed latency sensitive marketing software in Java Spring
                         </Bullet>
@@ -314,10 +314,10 @@ export default function Resume() {
                             <Container style={{padding: '0px'}}>
                                 <StandardHeader variant="h6">Skills</StandardHeader>
                                 <StandardParagraph>
-                                    General: Git, Docker, K8S, Multithreading, Basic DevOps, Basic Unix
+                                    General: Git, Docker, Multithreading, Basic DevOps, Basic Unix
                                 </StandardParagraph>
                                 <StandardParagraph>
-                                    Java: Spring Boot, JPA, Maven
+                                    Java: Spring Boot, JPA, Kafka, Maven
                                 </StandardParagraph>
                                 <StandardParagraph>
                                     Python: Numpy, Pandas, Scipy, Ray, Matplotlib, Jupyter, Keras
@@ -330,14 +330,14 @@ export default function Resume() {
                             <Container style={{padding: '0px'}}>
                                 <StandardHeader variant="h6">Limited Exposure</StandardHeader>
                                 <StandardParagraph>
-                                    C#, Wireguard, Grafana, Postgres, Mongo DB
+                                    C#, Wireguard, Grafana, Postgres, Mongo DB, K8S, BigQuery
                                 </StandardParagraph>
                             </Container>
 
                             <Container style={{padding: '0px'}}>
                                 <StandardHeader variant="h6">Education</StandardHeader>
                                 <StandardParagraph>
-                                    Rensselaer Polytechnic Institute (In progress)
+                                    Rensselaer Polytechnic Institute (2022)
                                 </StandardParagraph>
                                 <StandardParagraph>
                                     International School Bangkok (High School, 2009)
@@ -350,6 +350,6 @@ export default function Resume() {
             
             <div className="blurBackdrop"></div>
             <canvas className="stretchCanvas resumeCanvas"></canvas>
-        </PageItem>
+        </React.Fragment>
     )
 }

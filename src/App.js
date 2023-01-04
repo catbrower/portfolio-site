@@ -5,21 +5,22 @@ import {
   Route
 } from 'react-router-dom';
 
-import Title from './pages/Title';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
+import PageItem from './components/PageItem';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-          <Routes>
-            <Route path="/" element={<Title />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/resume" element={<Resume />} />
-          </Routes>
-          
+          <PageItem>
+            <Routes>
+              <Route path="/" element={<Resume />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/resume" element={<Resume />} />
+            </Routes>
+          </PageItem>
         </header>
       </div>
     </Router>
