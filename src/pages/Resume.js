@@ -226,22 +226,21 @@ export default function Resume() {
         renderer.setSize( window.innerWidth, window.innerHeight );
     }
 
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
+    // useEffect(() => {
+    //     window.addEventListener('resize', handleResize);
         
-        init();
-        animate();
-    });
+    //     init();
+    //     animate();
+    // });
 
     return (
         <React.Fragment>
             <Stack width={'100vw'} alignItems="center" direction="column" spacing={3}>
                 <Container>
                     <ResumeParagraph title="" subTitle="" transitionAmount={1}>
-                        <StandardHeader variant="h4">Catherine</StandardHeader>
-                        <StandardHeader variant="h5">Brower</StandardHeader>
+                        <StandardHeader variant="h4">Catherine Brower</StandardHeader>
                         <StandardParagraph>
-                            I am a driven and creative software engineer looking for unique opportunities.
+                            I am a driven and creative software engineer looking for cloud related opportunities.
                             I have three years experience creating enterprise software with Java.
                             In my most recent Java role I worked on a cloud application and I am very interested in similar positions.
                             Additionally, I have two years of front-end development experience, being most comfortable with React.
@@ -257,10 +256,10 @@ export default function Resume() {
                             Developed latency sensitive marketing software in Java Spring
                         </Bullet>
                         <Bullet>
-                            Improved application speed allowing for fast ad bids
+                            Improved application speed allowing for faster ad bids
                         </Bullet>
                         <Bullet>
-                            Deployed and managed production server in kubernetes
+                            Deployed and managed production traffic in kubernetes
                         </Bullet>
                     </ResumeParagraph>
                 </Container>
@@ -273,10 +272,10 @@ export default function Resume() {
                             Extensive use of GIT to maintain, create, merge, and rebase production branches
                         </Bullet>
                         <Bullet>
-                            Lead developed complex Javascript based web games, utilizing Ember framework
+                            Developed complex Javascript based web games, utilizing Ember framework
                         </Bullet>
                         <Bullet>
-                            Lead developer on large medical application with many subdomains including administrative portal for managing views and data
+                            Developer on large medical application with many subdomains including administrative portal for managing views and data
                         </Bullet>
                     </ResumeParagraph>
                 </Container>
@@ -314,7 +313,7 @@ export default function Resume() {
                             <Container style={{padding: '0px'}}>
                                 <StandardHeader variant="h6">Skills</StandardHeader>
                                 <StandardParagraph>
-                                    General: Git, Docker, Multithreading, Basic DevOps, Basic Unix
+                                    General: Git, Docker, Basic DevOps, Basic Unix
                                 </StandardParagraph>
                                 <StandardParagraph>
                                     Java: Spring Boot, JPA, Kafka, Maven
