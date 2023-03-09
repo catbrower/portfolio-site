@@ -42,7 +42,7 @@
         "school":"Rensselear Polytechnic Institute",
         "degree":"BS in Computer Science",
         "graduated":"December 2023",
-        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
+        "description":"My time at university was non-traditional. I originally started in fall 2010 but eventually had to take whatended up being a protracted medical leave. Recently I decided that the time was right finally finish my degree, graduating in 2023."
       },
       {
         "school":"International School Bangkok",
@@ -54,38 +54,45 @@
     "work":[
       {
         "company":"DeepIntent",
+        "link": "",
         "title":"Senior Java Developer (Remote)",
         "years":"August 2020 - August 2021",
-        "description":"While in this role I worked on ad bidding software using Java Spring. "
+        "description":"While in this role I worked on ad bidding software built using Java Spring. Additionally, I had my first exposure to Docker and Kubernetes."
       },
       {
         "company":"Gavant Software",
+        "link": "",
         "title":"Front-End Developer",
         "years":"June 2017 - June 2019",
-        "description":"At Gavant I worked exclusivly as a front-end developer. "
+        "description":"At Gavant I worked exclusivly as a front-end developer utilizing the Ember framework. Gavant engaged in contract work so I had the opportunity to work on many projects. Primarily I worked on creating content for a now defunt game HTML5 game website. "
       },
       {
         "company": "Tenex Developers",
-        "title": "Full Stack Developer (Remote)",
+        "link": "",
+        "title": "Full Stack Developer (Part-Time, Remote)",
         "years": "2016 - 2017",
-        "description": ""
+        "description": "Tenex was a moonlighting job where I assited with the front end portion of a web based text messaging application."
       },
       {
         "company":"Latham Pool Products",
+        "link": "",
         "title":"Java Developer",
         "years":"August 2014 - June 2017",
-        "description":""
+        "description":"latham straigh up sucks dawg"
       },
       {
-        "company": "NASA",
+        "company": "NASA, BCCSO",
+        "link": "https://www.nasa.gov/audience/foreducators/postsecondary/features/working-with-nasa-to-benefit.html",
         "title": "Intern",
         "years": "Summer 2011",
-        "description": ""
+        "description": "During this intership I worked is a doctorate student to process large datasets for his work in atmospheric science. Specifically, I was responsible for collecting online datasets, processing their contents and finally presenting them in a graphical format. This work was done in Java."
       }
     ],
     "skills":[
       {
-        "name": "Git"
+        "name": "Git",
+        "subtext": "Basic functions, Manage remotes, Rebase, Merge, Cherry Pick",
+        "description": "I've spent all of my professional career working with Git. "
       },
       {
         "name":"Python",
@@ -109,30 +116,6 @@
         "title":"QuantFinance",
         "category":"Experiments in quantataive finance",
         "image":"01.jpg",
-        "url":""
-      },
-      {
-        "title":"Tourbillon",
-        "category":"3D printing a single axis toubillon",
-        "image":"02.jpg",
-        "url":""
-      },
-      {
-        "title":"Compressed Air Motor",
-        "category":"A 3D printed motor that runs on compressed air",
-        "image":"03.jpg",
-        "url":""
-      },
-      {
-        "title":"X-Ray Emitter",
-        "category":"",
-        "image":"04.jpg",
-        "url":""
-      },
-      {
-        "title":"Nuclear Fusion",
-        "category":"",
-        "image":"05.jpg",
         "url":""
       },
       {
